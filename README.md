@@ -4,7 +4,18 @@
 [![Docs](https://img.shields.io/docsrs/bevy_proto_typetag)](https://docs.rs/bevy_proto_typetag/latest/bevy_proto_typetag/)
 [![License](https://img.shields.io/crates/l/bevy_proto_typetag)](./License.md)
 
+---
 
+> **Warning**
+> 
+> This crate is an archival of [`bevy_proto`](https://github.com/MrGVSV/bevy_proto) v0.7.0.
+> 
+> You may continue to use it and it may be infrequently updated (bumping Bevy dependencies,
+> accepting community PRs, etc.).
+> 
+> See [this section](https://github.com/MrGVSV/bevy_proto#-previous-versions) for more details.
+
+---
 
 Create entities in the Bevy game engine with a simple config file.
 
