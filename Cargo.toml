@@ -1,17 +1,17 @@
 [package]
-name = "bevy_proto"
+name = "bevy_proto_typetag"
 version = "0.7.0"
 edition = "2021"
 authors = ["Gino Valente <gino.valente.code@gmail.com>"]
-description = "Create config files for entities in Bevy"
-repository = "https://github.com/MrGVSV/bevy_proto"
+description = "bevy_proto with typetag support"
+repository = "https://github.com/MrGVSV/bevy_proto_typetag"
 license = "MIT OR Apache-2.0"
 keywords = ["bevy", "archetype", "config", "entity"]
 readme = "README.md"
 exclude = ["assets/**/*", ".github/**/*"]
 
 [dependencies]
-bevy_proto_derive = { version = "0.2", path = "bevy_proto_derive" }
+bevy_proto_typetag_derive = { version = "0.2", path = "bevy_proto_typetag_derive" }
 bevy = { version = "0.10", default-features = false, features = ["bevy_asset"] }
 serde = "1.0"
 typetag = "0.2"

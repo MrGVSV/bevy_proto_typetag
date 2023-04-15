@@ -1,0 +1,1 @@
+Derive macro for use with [`bevy_proto_typetag`](https://crates.io/crates/bevy_proto_typetag).

@@ -22,7 +22,7 @@
 //! Implement `ProtoComponent` for the component types:
 //! ```
 //! use bevy::prelude::*;
-//! use bevy_proto::prelude::*;
+//! use bevy_proto_typetag::prelude::*;
 //! use serde::{Deserialize, Serialize};
 //!
 //! #[derive(Clone, Serialize, Deserialize, ProtoComponent, Component)]
@@ -37,7 +37,7 @@
 //! Add the plugin:
 //! ```
 //! use bevy::prelude::*;
-//! use bevy_proto::prelude::*;
+//! use bevy_proto_typetag::prelude::*;
 //!
 //! fn main() {
 //!     App::new()
@@ -61,7 +61,7 @@
 //!
 //! ```
 //! use bevy::prelude::*;
-//! use bevy_proto::prelude::*;
+//! use bevy_proto_typetag::prelude::*;
 //!
 //! fn spawn_enemy(mut commands: Commands, data: Res<ProtoData>, asset_server: Res<AssetServer>) {
 //!     let proto = data.get_prototype("Simple Enemy").expect("Prototype doesn't exist!");
@@ -72,10 +72,10 @@
 //!
 //! ```
 //!
-extern crate bevy_proto_derive;
+extern crate bevy_proto_typetag_derive;
 
 mod components;
-pub use bevy_proto_derive::ProtoComponent;
+pub use bevy_proto_typetag_derive::ProtoComponent;
 pub use components::ProtoComponent;
 mod plugin;
 pub use plugin::ProtoPlugin;
@@ -96,7 +96,7 @@ pub mod prelude {
     pub use super::data::*;
     pub use super::plugin::ProtoPlugin;
     pub use super::prototype::{Prototype, Prototypical};
-    pub use bevy_proto_derive::*;
+    pub use bevy_proto_typetag_derive::*;
 }
 
 #[cfg(doctest)]

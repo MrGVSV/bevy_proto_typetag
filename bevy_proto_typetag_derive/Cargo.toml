@@ -1,10 +1,10 @@
 [package]
-name = "bevy_proto_derive"
+name = "bevy_proto_typetag_derive"
 version = "0.2.0"
 edition = "2021"
 authors = ["Gino Valente <gino.valente.code@gmail.com>"]
-description = "Derive macro for use with bevy_proto"
-repository = "https://github.com/MrGVSV/bevy_proto"
+description = "Derive macro for use with bevy_proto_typetag"
+repository = "https://github.com/MrGVSV/bevy_proto_typetag"
 license = "MIT OR Apache-2.0"
 readme = "README.md"
 

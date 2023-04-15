@@ -16,7 +16,7 @@
 use bevy::prelude::*;
 use serde::{Deserialize, Serialize};
 
-use bevy_proto::prelude::*;
+use bevy_proto_typetag::prelude::*;
 
 #[derive(Clone, Serialize, Deserialize, ProtoComponent, Component)]
 struct NPC;

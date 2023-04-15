@@ -1,8 +1,8 @@
-# bevy_proto
+# bevy_proto_typetag
 
-[![Crates.io](https://img.shields.io/crates/v/bevy_proto)](https://crates.io/crates/bevy_proto)
-[![Docs](https://img.shields.io/docsrs/bevy_proto)](https://docs.rs/bevy_proto/latest/bevy_proto/)
-[![License](https://img.shields.io/crates/l/bevy_proto)](./License.md)
+[![Crates.io](https://img.shields.io/crates/v/bevy_proto_typetag)](https://crates.io/crates/bevy_proto_typetag)
+[![Docs](https://img.shields.io/docsrs/bevy_proto_typetag)](https://docs.rs/bevy_proto_typetag/latest/bevy_proto_typetag/)
+[![License](https://img.shields.io/crates/l/bevy_proto_typetag)](./License.md)
 
 
 
@@ -58,7 +58,7 @@ components:
 
 ```toml
 [dependencies]
-bevy_proto = "0.7"
+bevy_proto_typetag = "0.7"
 typetag = "0.2"
 ```
 
@@ -66,7 +66,7 @@ Then add it to your app like so:
 
 ```rust
 use bevy::prelude::*;
-use bevy_proto::ProtoPlugin;
+use bevy_proto_typetag::ProtoPlugin;
 
 fn main() {
     App::new()
@@ -82,14 +82,14 @@ fn main() {
 
 Check out these examples for more details as to how to use this crate:
 
-* [attributes](https://github.com/MrGVSV/bevy_proto/blob/main/examples/attributes.rs) - A showcase of the available derive helper attributes
-* [basic](https://github.com/MrGVSV/bevy_proto/blob/main/examples/basic.rs) - The most basic way to add prototypes
-* [bundles](https://github.com/MrGVSV/bevy_proto/blob/main/examples/bundles.rs) - A demonstration of a more complex prototype that includes assets
-* [templates](https://github.com/MrGVSV/bevy_proto/blob/main/examples/templates.rs) - An example of how templates affect your prototypes
+* [attributes](https://github.com/MrGVSV/bevy_proto_typetag/blob/main/examples/attributes.rs) - A showcase of the available derive helper attributes
+* [basic](https://github.com/MrGVSV/bevy_proto_typetag/blob/main/examples/basic.rs) - The most basic way to add prototypes
+* [bundles](https://github.com/MrGVSV/bevy_proto_typetag/blob/main/examples/bundles.rs) - A demonstration of a more complex prototype that includes assets
+* [templates](https://github.com/MrGVSV/bevy_proto_typetag/blob/main/examples/templates.rs) - An example of how templates affect your prototypes
 
 ## 🕊 Bevy Compatibility
 
-| bevy | bevy_proto |
+| bevy | bevy_proto_typetag |
 |------|------------|
 | 0.10 | 0.7.0      |
 | 0.9  | 0.6.0      |
@@ -109,7 +109,7 @@ For simple components, `ProtoComponent` may be derived:
 ```rust
 use serde::{Deserialize, Serialize};
 use bevy::prelude::*;
-use bevy_proto::prelude::*;
+use bevy_proto_typetag::prelude::*;
 
 #[derive(Clone, Serialize, Deserialize, ProtoComponent, Component)]
 struct Movement {
@@ -130,7 +130,7 @@ Otherwise, you can define them manually (the two attributes are required with th
 ```rust
 use bevy::prelude::*;
 use bevy::ecs::system::EntityCommands;
-use bevy_proto::prelude::*;
+use bevy_proto_typetag::prelude::*;
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Component)] // Required
@@ -149,7 +149,7 @@ impl ProtoComponent for Inventory {
 
 > A `ProtoComponent` does *not* need to be a component itself. It can be used purely as a [DTO](https://en.wikipedia.org/wiki/Data_transfer_object) to generate other components or bundles. You have full access to the `EntityCommands` so you can insert bundles or even multiple components at once.
 >
-> Other ways of generating components from non-component `ProtoComponent` structs can be found in the [attributes](https://github.com/MrGVSV/bevy_proto/blob/main/examples/attributes.rs) example.
+> Other ways of generating components from non-component `ProtoComponent` structs can be found in the [attributes](https://github.com/MrGVSV/bevy_proto_typetag/blob/main/examples/attributes.rs) example.
 
 ### Defining the Prototype
 
@@ -235,7 +235,7 @@ Then write something like the following:
 
 ```rust
 use bevy::prelude::*;
-use bevy_proto::prelude::*;
+use bevy_proto_typetag::prelude::*;
 
 fn spawn_adventurer(mut commands: Commands, data: Res<ProtoData>, asset_server: Res<AssetServer>) {
     let proto = data.get_prototype("Adventurer").expect("Prototype doesn't exist!");
@@ -250,7 +250,7 @@ components, bundles, etc.:
 
 ```rust
 use bevy::prelude::*;
-use bevy_proto::prelude::*;
+use bevy_proto_typetag::prelude::*;
 
 #[derive(Component)]
 struct Friendly;
@@ -280,7 +280,7 @@ when no longer needed.
 use bevy::ecs::system::EntityCommands;
 use bevy::prelude::*;
 use serde::{Deserialize, Serialize};
-use bevy_proto::prelude::*;
+use bevy_proto_typetag::prelude::*;
 
 #[derive(Component)]
 struct Renderable {
@@ -313,7 +313,7 @@ be disposed of manually when no longer needed. Setting up an asset is done via t
 use bevy::ecs::system::EntityCommands;
 use bevy::prelude::*;
 use serde::{Deserialize, Serialize};
-use bevy_proto::prelude::*;
+use bevy_proto_typetag::prelude::*;
 
 #[derive(Serialize, Deserialize)]
 struct Renderable {
@@ -360,7 +360,7 @@ impl ProtoComponent for Creature {
 The default Prototype object looks like this:
 
 ```rust
-use bevy_proto::prelude::*;
+use bevy_proto_typetag::prelude::*;
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
@@ -380,7 +380,7 @@ However, you can use your own Prototype object. Any struct that implements `Prot
 use serde::{Deserialize, Serialize};
 use bevy::prelude::*;
 use bevy::ecs::system::EntityCommands;
-use bevy_proto::prelude::*;
+use bevy_proto_typetag::prelude::*;
 
 #[derive(Serialize, Deserialize)]
 struct CustomPrototype;
@@ -462,7 +462,7 @@ breakdown of the top current/potential issues:
 
   ```rust
   use bevy::prelude::*;
-  use bevy_proto::prelude::*;
+  use bevy_proto_typetag::prelude::*;
 
   #[derive(Component)]
   struct OtherComponent(Handle<Image>);

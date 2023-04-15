@@ -3,7 +3,7 @@
 use bevy::prelude::*;
 use serde::{Deserialize, Serialize};
 
-use bevy_proto::prelude::*;
+use bevy_proto_typetag::prelude::*;
 
 /// This is the component we will use with our prototype
 /// It must impl/derive Serialize, Clone, and Deserialize from serde in order to compile

@@ -84,7 +84,7 @@ impl ProtoData {
     ///
     /// ```
     /// use bevy::prelude::*;
-    /// use bevy_proto::prelude::*;
+    /// use bevy_proto_typetag::prelude::*;
     /// use serde::{Deserialize, Serialize};
     ///
     /// #[derive(Clone, Deserialize, Serialize, Component, ProtoComponent)]
@@ -444,7 +444,7 @@ pub trait ProtoDeserializer: DynClone {
     ///
     /// ```
     /// // The default implementation:
-    /// use bevy_proto::{Prototype, Prototypical};
+    /// use bevy_proto_typetag::{Prototype, Prototypical};
     /// fn example_deserialize(data: &str) -> Option<Box<dyn Prototypical>> {
     ///     if let Ok(value) = serde_yaml::from_str::<Prototype>(data) {
     ///         Some(Box::new(value))
@@ -468,7 +468,7 @@ pub struct ProtoDataOptions {
     /// # Examples
     ///
     /// ```
-    /// use bevy_proto::data::ProtoDataOptions;
+    /// use bevy_proto_typetag::data::ProtoDataOptions;
     ///
     /// // Recursively loads all yaml files from the "assets/prototypes" directory.
     /// let opts = ProtoDataOptions {
@@ -489,7 +489,7 @@ pub struct ProtoDataOptions {
     /// # Examples
     ///
     /// ```
-    /// use bevy_proto::data::ProtoDataOptions;
+    /// use bevy_proto_typetag::data::ProtoDataOptions;
     ///
     /// let opts = ProtoDataOptions {
     ///     // Only allow .yaml or .json files

@@ -1,7 +1,7 @@
 use std::time::Instant;
 
 use bevy::prelude::*;
-use bevy_proto::prelude::*;
+use bevy_proto_typetag::prelude::*;
 use serde::{Deserialize, Serialize};
 
 const ENTITY_COUNT: u128 = 200_000;

@@ -28,10 +28,10 @@ mod constants;
 /// // Which generates:
 /// //
 /// // #[typetag::serde]
-/// // impl bevy_proto::ProtoComponent for #ident { ///
+/// // impl bevy_proto_typetag::ProtoComponent for #ident { ///
 /// // 	fn insert_self(
 /// //    &self,
-/// //    commands: &mut bevy_proto::ProtoCommands,
+/// //    commands: &mut bevy_proto_typetag::ProtoCommands,
 /// // 	  asset_server: &bevy::prelude::Res<bevy::prelude::AssetServer>,
 /// //  ) {
 /// //      let component = self.clone();
@@ -74,10 +74,10 @@ pub fn proto_comp_derive(input: TokenStream) -> TokenStream {
 
     let output = quote! {
         #[typetag::serde]
-        impl bevy_proto::prelude::ProtoComponent for #ident {
+        impl bevy_proto_typetag::prelude::ProtoComponent for #ident {
             fn insert_self(
                 &self,
-                commands: &mut bevy_proto::prelude::ProtoCommands,
+                commands: &mut bevy_proto_typetag::prelude::ProtoCommands,
                 asset_server: &bevy::prelude::Res<bevy::prelude::AssetServer>,
             ) {
                 #generator;

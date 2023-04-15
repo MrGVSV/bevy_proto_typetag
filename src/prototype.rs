@@ -61,7 +61,7 @@ pub trait Prototypical: 'static + Send + Sync {
     ///
     /// ```
     /// use bevy::prelude::*;
-    /// use bevy_proto::prelude::{ProtoData, Prototype, Prototypical};
+    /// use bevy_proto_typetag::prelude::{ProtoData, Prototype, Prototypical};
     ///
     /// fn setup_system(mut commands: Commands, data: Res<ProtoData>, asset_server: &Res<AssetServer>) {
     ///     let proto: Prototype = serde_yaml::from_str(r#"
@@ -103,7 +103,7 @@ pub trait Prototypical: 'static + Send + Sync {
     ///
     /// ```
     /// use bevy::prelude::*;
-    /// use bevy_proto::prelude::{ProtoData, Prototype, Prototypical};
+    /// use bevy_proto_typetag::prelude::{ProtoData, Prototype, Prototypical};
     ///
     /// #[derive(Component)]
     /// struct Player(pub Entity);

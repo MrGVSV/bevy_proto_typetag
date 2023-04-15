@@ -20,7 +20,7 @@ use crate::prototype::Prototypical;
 /// ```
 /// use serde::{Deserialize, Serialize};
 /// use bevy::prelude::*;
-/// use bevy_proto::prelude::*;
+/// use bevy_proto_typetag::prelude::*;
 ///
 /// #[derive(Clone, Serialize, Deserialize, Component, ProtoComponent)]
 /// pub struct Movement {
@@ -41,7 +41,7 @@ use crate::prototype::Prototypical;
 /// use serde::{Deserialize, Serialize};
 /// use bevy::prelude::*;
 /// use bevy::ecs::system::EntityCommands;
-/// use bevy_proto::prelude::*;
+/// use bevy_proto_typetag::prelude::*;
 ///
 /// // We'll implement `ProtoComponent` on this `Inventory` struct.
 /// // Our implementation will insert multiple different components.

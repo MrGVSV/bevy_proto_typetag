@@ -1,5 +1,5 @@
 use bevy::prelude::*;
-use bevy_proto::prelude::*;
+use bevy_proto_typetag::prelude::*;
 use serde::{Deserialize, Serialize};
 
 /// Not every `ProtoComponent` needs to itself be a `Component` (or vice-versa)
